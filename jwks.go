@@ -75,10 +75,9 @@ func NewFromJSONString(jwksString string) (*JWKS, error) {
 			use: key.Use,
 			pk:  pk,
 		}
-
 	}
 
-	return nil, nil
+	return result, nil
 }
 
 func (j *JWKS) KeyFunc(token *jwt.Token) (interface{}, error) {

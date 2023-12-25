@@ -6,12 +6,12 @@ import (
 )
 
 const (
-	// ktyRSA (key type) parameter identifies the cryptographic algorithm
-	// It located in JWT header
+	// ktyRSA (key type) parameter identifies the cryptographic algorithm.
+	// It located in JWT header.
 	ktyRSA = "RSA"
 )
 
-// RSA try to convert JWK to RSA public key
+// RSA try to convert JWK to RSA public key.
 func (t *JWK) RSA() (*rsa.PublicKey, error) {
 	if t.Exp == "" || t.Mod == "" {
 		return nil, ErrReqComponents
@@ -21,6 +21,7 @@ func (t *JWK) RSA() (*rsa.PublicKey, error) {
 	if err != nil {
 		return nil, err
 	}
+
 	mod, err := componentToBase64(t.Mod)
 	if err != nil {
 		return nil, err

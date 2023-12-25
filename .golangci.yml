@@ -13,6 +13,7 @@ linters:
     - golint
     - ireturn
     - nosnakecase
+    - depguard
 linters-settings:
   tagliatelle:
     case:
